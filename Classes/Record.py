@@ -2,9 +2,40 @@ from .Name import Name
 from .Phone import Phone
 from .Birthday import Birthday
 from .Email import Email
+from abc import abstractmethod, ABC
 
 
-class Record:
+class MyBaseClass(ABC):
+    @abstractmethod
+    def add_phone(self):
+        pass
+
+    @abstractmethod
+    def add_email(self):
+        pass
+
+    @abstractmethod
+    def add_birthday(self):
+        pass
+
+    @abstractmethod
+    def get_phone_numbers(self):
+        pass
+
+    @abstractmethod
+    def get_emails(self):
+        pass
+
+    @abstractmethod
+    def delete_phone(self):
+        pass
+
+    @abstractmethod
+    def delete_email(self):
+        pass
+
+
+class Record(MyBaseClass):
     def __init__(self):
         self.phones = []
         self.emails = []
